@@ -1,6 +1,7 @@
 module Main exposing (..)
 
-import Html exposing (Html, program, text, div)
+import Html exposing (Html, program, button, div, h1, text)
+import Html.Attributes exposing (id)
 
 
 type alias Model =
@@ -24,7 +25,8 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ text "Hello world!"
+        [ h1 [] [ text "RSA Simulator 2016" ]
+        , button [ id "pitch-button" ] []
         ]
 
 

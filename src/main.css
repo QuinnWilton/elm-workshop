@@ -1,12 +1,30 @@
 body {
-  font-family: 'Source Sans Pro', 'Trebuchet MS', 'Lucida Grande', 'Bitstream Vera Sans', 'Helvetica Neue', sans-serif;
-  font-size: 30px;
-  margin: 0;
-  text-align: center;
-  color: #293c4b;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 650px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #444;
+    padding: 0 10px
 }
 
-img {
-  margin: 20px 0;
-  max-width: 200px;
+#pitch-button {
+    width: 364px;
+    height: 240px;
+    cursor: pointer;
+    background-color: Transparent;
+    border: none;
+    outline: none;
+    background-image: url("security.png");
+    background-size: contain;
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+#pitch-button:hover, #pitch-button:focus {
+    transform: scale(1.1);
+}
+
+#pitch-button:active {
+    transform: scale(0.9);
 }
