@@ -28,3 +28,39 @@ body {
 #pitch-button:active {
     transform: scale(0.9);
 }
+
+.store-item {
+    width: 300px;
+    height: 64px;
+    position: relative;
+    padding: 10px;
+    margin: 10px auto;
+    cursor: pointer;
+    background-color: #2C99CE;
+}
+
+.store-item .icon {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.store-item .tinfoil-hats {
+    background-image: url("tinfoilhats.png");
+}
+
+.store-item .salesperson {
+    background-image: url("salesperson.png");
+}
+
+.store-item .content {
+    display: inline-block;
+    position: absolute;
+    left: 64px;
+    top: 6px;
+    right: 0px;
+    bottom: 6px;
+    padding: 4px;
+}
