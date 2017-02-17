@@ -1,76 +1,11 @@
-This project is bootstrapped with [Create Elm App](https://github.com/halfzebra/create-elm-app).
+## First steps
 
-Below you will find some information on how to perform basic tasks.  
-You can find the most recent version of this guide [here](https://github.com/halfzebra/create-elm-app/blob/master/template/README.md).
-
-## Table of Contents
-- [Sending feedback](#sending-feedback)
-- [Folder structure](#folder-structure)
-- [Installing Elm packages](#installing-elm-packages)
-- [Installing JavaScript packages](#installing-js-packages)
-- [Available scripts](#available-scripts)
-  - [elm-app build](#elm-app-build)
-  - [elm-app start](#elm-app-start)
-  - [elm-app test](#elm-app-test)
-  - [elm-app eject](#elm-app-eject)
-  - [elm-app <elm-platform-comand>](#elm-app-elm-platform-comand)
-    - [package](#package)
-    - [repl](#repl)
-    - [make](#make)
-    - [reactor](#reactor)
-- [Adding Images and Fonts](#adding-images-and-fonts)
-- [IDE setup for Hot Module Replacement](#ide-setup-for-hot-module-replacement)
-
-## Sending feedback
-You are very welcome with any [feedback](https://github.com/halfzebra/create-elm-app/issues)
-
-## Installing Elm packages
-
-```sh
-elm-app package install <package-name>
+```
+npm install create-elm-app -g
+elm-app start
 ```
 
-## Installing JavaScript packages
-
-To use JavaScript packages from npm, you'll need to add a `package.json`, install the dependencies, and you're ready to go.
-
-```sh
-npm init -y # Add package.json
-npm install --save-dev pouchdb-browser # Install library from npm
-```
-
-```js
-// Use in your JS code
-var PouchDB = require('pouchdb-browser');
-var db = new PouchDB('mydb');
-```
-
-## Folder structure
-```
-my-app/
-  .gitignore
-  README.md
-  elm-package.json
-  src/
-    favicon.ico
-    index.html
-    index.js
-    main.css
-    Main.elm
-  tests/
-    elm-package.json
-    Main.elm
-    Tests.elm
-```
-For the project to build, these files must exist with exact filenames:
-
-- `src/index.html` is the page template;
-- `src/favicon.ico` is the icon you see in the browser tab;
-- `src/index.js` is the JavaScript entry point.
-
-You can delete or rename the other files.
-
-You may create subdirectories inside src.
+The initial start will install packages, etc, and will take longer than usual. Once running, the app will open in your browser. A watch process will also start, which will refresh the page whenever you modify the code.
 
 ## Available scripts
 In the project directory you can run:
@@ -120,35 +55,3 @@ Alias for  [elm-make](http://guide.elm-lang.org/get_started.html#elm-make)
 
 #### `reactor`
 Alias for  [elm-reactor](http://guide.elm-lang.org/get_started.html#elm-reactor)
-
-## Adding Images and Fonts
-
-With Webpack, using static assets like images and fonts works similarly to CSS.
-
-By requiring an image in JavaScript code, you tell Webpack to add a file to the build of your application. The variable will contain a unique path to the said file.
-
-Here is an example:
-
-```js
-require('./main.css');
-var logoPath = require('./logo.svg'); // Tell Webpack this JS file uses this image
-var Elm = require('./Main.elm');
-
-var root = document.getElementById('root');
-
-Elm.Main.embed(root, logoPath); // Pass image path as a flag.
-```
-Later on, you can use the image path in your view for displaying it in the DOM.
-
-```elm
-view : Model -> Html Msg
-view model =
-    div []
-        [ img [ src model.logo ] []
-        , div [] [ text model.message ]
-        ]
-```
-
-
-## IDE setup for Hot Module Replacement
-Remember to disable [safe write](https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write) if you are using VIM or IntelliJ IDE, such as WebStrom.
